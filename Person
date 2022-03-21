@@ -1,0 +1,43 @@
+package Lesson5;
+
+public class Person {
+    String name;
+    String position;
+    String email;
+    String phone_number;
+    int salary;
+    int age;
+
+    public Person(String name, String position, String email, String phone_number, int salary, int age) {
+        this.name = name;
+        this.position = position;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.salary = salary;
+        this.age = age;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Имя: %s \tДолжность: %s \nEmail: %s \t Номер телефона: %s \n Зарплата: %d \t Возраст: %d \n",
+                name, position, email, phone_number, salary, age);}
+
+    public void print(){
+        System.out.println(this);
+    }
+
+
+    public static void main(String[] args)  {
+
+        Person[] persArray = new Person[5];
+        persArray[0] = new Person("Дарья Мастенкова", "QA-engineer", "skorodarya@gmail.com", "+79312253192", 100000, 41);
+        persArray[1] = new Person("Виктор Иванов", "Руководитель направления", "VI@gmail.com", "+74567645309", 500000, 45);
+        persArray[2] = new Person("Александр Васильев", "Аналитик", "AV@yandex.ru", "+7876458340", 150000, 46);
+        persArray[3] = new Person("Валерия Морозова", "Инженер по развитию", "VIM@yandex.ru", "+79845678349", 120000, 38);
+        persArray[4] = new Person("Антон Петров", "Scram", "Anton@gmail.com", "+78315436784", 300000, 49);
+
+        for (int i=0; i < persArray.length; i++)
+            if (persArray[i].age > 40) persArray[i].print();
+
+    }
+}
